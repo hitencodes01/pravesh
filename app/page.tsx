@@ -1,65 +1,139 @@
-import Image from "next/image";
+import TopBar from "@/components/ui/TopBar";
+import Navbar from "@/components/ui/Navbar";
+import HeroSlider from "@/components/ui/HeroSlider";
+import PlacementMarquee from "@/components/ui/PlacementMarquee";
+import type { Metadata } from "next";
+import CourseSection from "@/components/ui/CourseSection";
+import RSKC from "@/components/ui/RSKC";
+import Banner from "@/components/ui/Banner";
+import Footer from "@/components/ui/Footer";
+import Secretary from "@/components/ui/Secretary";
+import PlacementCarousel from "@/components/ui/PlacementSlider";
+import AdmissionProcess from "@/components/ui/AdmissionProcess";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <TopBar />
+      <Navbar />
+      <Banner />
+      <HeroSlider />
+      <RSKC />
+      <PlacementMarquee />
+      <CourseSection />
+      <Secretary />
+      <PlacementCarousel placements={[{ id: 1, company: "TCS", role: "Software Engineer", package: "7 LPA", location: "Noida", image: "/images/placements/tcs.jpg", alt: "TCS Placement", }, { id: 2, company: "Infosys", role: "System Engineer", package: "6.5 LPA", location: "Bangalore", image: "/images/placements/infosys.jpg", alt: "Infosys Placement", }, { id: 3, company: "Wipro", role: "Full Stack Developer", package: "8 LPA", location: "Hyderabad", image: "/images/placements/wipro.jpg", alt: "Wipro Placement", },]} />
+      <AdmissionProcess fromCourse={null}/>
+      <Footer />
+    </>
   );
 }
+
+
+
+export const metadata: Metadata = {
+  title:
+    "VSGOI Pravesh 2026 | Admission Open | BCA, BBA, B.Tech, MBA | Virendra Swarup Group of Institutions",
+
+  description:
+    "Apply online for admission at VSGOI Pravesh. Explore BCA, BBA, B.Tech, MBA, Polytechnic and professional courses at Virendra Swarup Group of Institutions. CSJMU affiliated, placement assistance, scholarships and industry-oriented education.",
+
+  keywords: [
+    // Brand Keywords
+    "VSGOI",
+    "VSGOI Pravesh",
+    "vsgoi",
+    "vsgoi.in",
+    "Virendra Swarup Group of Institutions",
+    "Dr Virendra Swarup Group of Institutions",
+    "Virendra Swarup College",
+
+    // Admission Keywords
+    "VSGOI Admission",
+    "VSGOI Admission 2026",
+    "Admission Open 2026",
+    "Online Admission",
+    "College Admission Kanpur",
+    "College Admission Unnao",
+    "Apply Online VSGOI",
+    "Pravesh VSGOI",
+    "pravesh.vsgoi.in",
+
+    // Course Keywords
+    "BCA Admission",
+    "BBA Admission",
+    "BTech Admission",
+    "MBA Admission",
+    "Polytechnic Admission",
+    "Computer Science Engineering",
+    "Information Technology Course",
+    "Engineering College Kanpur",
+    "Engineering College Unnao",
+
+    // Location Keywords
+    "Best College in Kanpur",
+    "Best College in Unnao",
+    "College near Kanpur",
+    "College near Lucknow",
+    "Kanpur Lucknow Highway College",
+    "Ragendra Swarup Knowledge City",
+
+    // Placement Keywords
+    "Best Placement College",
+    "Campus Placement",
+    "Internship Opportunities",
+    "Industry Oriented Education",
+    "Career Focused College",
+
+    // BCA Focus
+    "Best BCA College in Kanpur",
+    "Best BCA College in Unnao",
+    "BCA with Placement",
+    "CSJMU BCA College",
+
+    // BBA Focus
+    "Best BBA College in Kanpur",
+    "Best BBA College in Unnao",
+    "BBA with Placement",
+
+    // Engineering Focus
+    "Best Engineering College in Kanpur",
+    "Best Engineering College in Unnao",
+    "BTech CSE Admission",
+    "Computer Science Engineering Admission",
+
+    // CMS Related Searches
+    "CMS CSJMU",
+    "cmscsjm.org",
+    "College of Management Studies Unnao",
+    "CMS Admission",
+    "CMS BCA Admission",
+    "CMS BBA Admission",
+
+    // Authority Keywords
+    "CSJMU Affiliated College",
+    "AICTE Approved College",
+    "Scholarship Available",
+    "Professional Education",
+    "Technical Education"
+  ],
+
+  alternates: {
+    canonical: "https://praveshvsgoi.in",
+  },
+
+  openGraph: {
+    title:
+      "VSGOI Pravesh 2026 | Admissions Open",
+    description:
+      "Apply for BCA, BBA, B.Tech, MBA and other professional courses at Virendra Swarup Group of Institutions.",
+    url: "https://praveshvsgoi.in",
+    siteName: "VSGOI Pravesh",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
