@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/db";
-import {User} from "@/models/user.model";
+import { User } from "@/models/user.model";
 import { apiResponse } from "@/lib/apiResponse";
 import { verifyAccessToken } from "@/lib/jwt";
 
