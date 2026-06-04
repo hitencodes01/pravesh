@@ -24,7 +24,7 @@ interface HeroSliderProps {
 const DEFAULT_SLIDES: Slide[] = [
     {
         id: 2,
-        src: "/images/pravesh.png",
+        src: "/images/Pravesh.png",
         alt: "Students in computer lab",
         headline: "Admissions Open 2026–27",
         subline: "B.Tech · MBA · BCA · BBA · ITI · POLYTECHNIC",
@@ -48,7 +48,7 @@ const DEFAULT_SLIDES: Slide[] = [
     },
     {
         id: 4,
-        src: "/images/b1.jpg",
+        src: "/images/B1.jpg",
         alt: "VSGOI convocation ceremony",
         headline: "Celebrate, Innovate, Lead",
         subline: "A vibrant campus life built for holistic growth",
