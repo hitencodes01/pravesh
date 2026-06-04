@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef } from "react";
-import { submitAdmissionForm, type AdmissionFormState } from "@/actions/admission.action";
+import { submitAdmissionForm, type AdmissionFormState } from "../actions/admission.action";
 import { cn } from "@/lib/utils";
 import { CheckCircle, AlertCircle, Loader2, GraduationCap } from "lucide-react";
 
