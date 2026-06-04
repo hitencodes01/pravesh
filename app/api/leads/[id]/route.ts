@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/db";
-import Lead from "@/models/leads.model";
+import {Lead} from "@/models/leads.model";
 import { apiResponse } from "@/lib/apiResponse";
 
 type Params = { params: { id: string } };

@@ -23,20 +23,20 @@ interface HeroSliderProps {
 
 const DEFAULT_SLIDES: Slide[] = [
     {
-        id: 1,
-        src: "/images/building.jpeg",
-        alt: "VSGOI campus — aerial view",
-        headline: "Shaping Tomorrow's Engineers",
-        subline: "15+ years of academic excellence in technical education",
-        cta: { label: "Explore Programs", href: "/courses" },
-    },
-    {
         id: 2,
         src: "/images/pravesh.png",
         alt: "Students in computer lab",
         headline: "Admissions Open 2026–27",
         subline: "B.Tech · MBA · BCA · BBA · ITI · POLYTECHNIC",
         cta: { label: "Apply Now", href: "/admission" },
+    },
+    {
+        id: 1,
+        src: "/images/building.jpeg",
+        alt: "VSGOI campus — aerial view",
+        headline: "Shaping Tomorrow's Engineers",
+        subline: "15+ years of academic excellence in technical education",
+        cta: { label: "Explore Programs", href: "/courses" },
     },
     {
         id: 3,
