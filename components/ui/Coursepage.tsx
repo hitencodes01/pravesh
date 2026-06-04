@@ -29,7 +29,7 @@ export interface CourseData {
         label: string;
         value: string;
     }[];
-    placements: { id: number; company: string; role: string; package: string; location: string; image: string; alt: string }[];
+    placements?: { id: number; company: string; role: string; package: string; location: string; image: string; alt: string }[];
 }
 
 const accentMap = {

@@ -123,7 +123,7 @@ export default function POLYTECHNIC() {
         <div>
             <Navbar />
             <CoursePage course={polytechnic} />
-            <AdmissionProcess/>
+            <AdmissionProcess fromCourse={"polytechnic"} />
             <Footer />
         </div>
     )
