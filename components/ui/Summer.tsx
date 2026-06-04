@@ -1,9 +1,9 @@
 "use client"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function Summer() {
     const [isVisible, setIsVisible] = useState<boolean>(true)
-
     if (!isVisible) return null
 
     return (
@@ -61,7 +61,7 @@ export default function Summer() {
                             style={{
                                 position: "absolute",
                                 top: "12px",
-                                right: "12px",
+                                right: "10px",
                                 width: "36px",
                                 height: "36px",
                                 borderRadius: "50%",
@@ -77,14 +77,6 @@ export default function Summer() {
                                 boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
                                 transition: "background 0.2s, transform 0.15s",
                             }}
-                            onMouseEnter={e => {
-                                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#fff"
-                                    ; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.1)"
-                            }}
-                            onMouseLeave={e => {
-                                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(255,255,255,0.85)"
-                                    ; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"
-                            }}
                         >
                             ✕
                         </button>
@@ -93,21 +85,20 @@ export default function Summer() {
                     {/* Content area */}
                     <div style={{
                         backgroundColor: "#fff",
-                        padding : "10px"
+                        padding: "10px"
                     }}>
 
                         {/* Action buttons */}
-                        <div style={{ display: "flex"}}>
+                        <div className="gap-2" style={{ display: "flex" }}>
                             {/* Cancel button */}
                             <button
-                                onClick={() => setIsVisible(false)}
                                 style={{
                                     flex: 1,
                                     padding: "12px",
                                     borderRadius: "10px",
                                     border: "1.5px solid #e5e7eb",
                                     backgroundColor: "blue",
-                                    color: "#555",
+                                    color: "white",
                                     fontSize: "14px",
                                     fontFamily: "sans-serif",
                                     fontWeight: 500,
@@ -118,24 +109,12 @@ export default function Summer() {
                                     justifyContent: "center",
                                     gap: "6px",
                                 }}
-                                onMouseEnter={e => {
-                                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#f9fafb"
-                                        ; (e.currentTarget as HTMLButtonElement).style.borderColor = "#d1d5db"
-                                }}
-                                onMouseLeave={e => {
-                                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent"
-                                        ; (e.currentTarget as HTMLButtonElement).style.borderColor = "#e5e7eb"
-                                }}
                             >
                                 <span style={{ fontSize: "16px" }}>✕</span> Cancel
                             </button>
 
                             {/* Apply button */}
                             <button
-                                onClick={() => {
-                                    alert("Application submitted! 🎉")
-                                    setIsVisible(false)
-                                }}
                                 style={{
                                     flex: 1,
                                     padding: "12px",
@@ -164,7 +143,7 @@ export default function Summer() {
                                         ; (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 4px 14px rgba(249,115,22,0.4)"
                                 }}
                             >
-                                Apply Now 
+                                <Link href={"https://forms.gle/i1KmzmZPmNMBxfXU8"}>Apply Now</Link>
                             </button>
                         </div>
                     </div>
