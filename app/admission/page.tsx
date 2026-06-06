@@ -120,7 +120,7 @@ export default function AdmissionPage() {
                 <div className="mx-auto max-w-xl">
                     {/* heading */}
                     <div className="mb-8 text-center">
-                        <div className="mb-3 inline-flex h-16 w-16 items-center justify-center rounded-xl overflow-hidden">
+                        <div className="mb-3 inline-flex h-8 w-20 items-center justify-center  overflow-hidden">
                             <img src="/images/vsgoi.jpg" alt="VSGOI Logo" className="h-full w-full object-cover" />
                         </div>
                         <h1 className="text-2xl font-bold uppercase tracking-widest text-amber-400 sm:text-3xl">
