@@ -29,7 +29,7 @@ const importantLinks = [
   { label: "Careers", href: "/careers" },
 ]
 
-export default  function Footer() {
+export default function Footer() {
   return (
     <footer
       aria-label="Site footer"
@@ -66,14 +66,14 @@ export default  function Footer() {
             {/* Contact */}
             <div className="flex flex-col gap-2">
               <a
-                href="tel:+915122345678"
+                href="tel:+917311105831"
                 className="flex items-center gap-2 text-sm text-slate-400 hover:text-amber-300 transition-colors duration-150"
                 aria-label="Call us"
               >
                 <svg viewBox="0 0 20 20" fill="none" className="h-4 w-4 flex-shrink-0 text-amber-400/60" aria-hidden="true">
                   <path d="M3 3.5A1.5 1.5 0 014.5 2h1.757a1 1 0 01.96.714l.93 3.257a1 1 0 01-.29 1.016L6.6 8.1a11.05 11.05 0 004.3 4.3l1.114-1.257a1 1 0 011.016-.29l3.257.93A1 1 0 0117 12.743V14.5A1.5 1.5 0 0115.5 16C8.044 16 2 9.956 2 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
-                +91 512 234 5678
+                +91-7311105831
               </a>
               <a
                 href="mailto:info@vsgoi.ac.in"
@@ -100,35 +100,25 @@ export default  function Footer() {
                     </svg>
                   ),
                 },
-                // {
-                //   label: "YouTube",
-                //   href: "https://youtube.com/vsgoi",
-                //   icon: (
-                //     <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
-                //       <path d="M17.5 6.5s-.2-1.3-.8-1.9c-.7-.8-1.6-.8-2-.8C12.5 3.6 10 3.6 10 3.6s-2.5 0-4.7.2c-.4 0-1.3 0-2 .8C2.7 5.2 2.5 6.5 2.5 6.5S2.3 8 2.3 9.5v1.4c0 1.5.2 3 .2 3s.2 1.3.8 1.9c.7.8 1.7.7 2.2.8C6.9 16.7 10 16.7 10 16.7s2.5 0 4.7-.3c.4 0 1.3 0 2-.8.6-.6.8-1.9.8-1.9s.2-1.5.2-3V9.5c0-1.5-.2-3-.2-3zM8.4 12.7V7.3l5.4 2.7-5.4 2.7z" />
-                //     </svg>
-                //   ),
-                // },
                 {
-                  label: "LinkedIn",
-                  href: "https://linkedin.com/school/vsgoi",
+                  label: "Instagram",
+                  href: "https://www.instagram.com/vsgoi_unnao.in",
                   icon: (
-                    <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
-                      <path d="M5 3.5A1.5 1.5 0 113.5 5 1.5 1.5 0 015 3.5zM4 7h2v9H4zm5 0h1.9v1.2h.1A2.2 2.2 0 0113 7c2.1 0 2.5 1.4 2.5 3.2V16H14v-5.3c0-.8 0-1.9-1.1-1.9s-1.4.9-1.4 1.8V16H9z" />
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                     </svg>
                   ),
                 },
               ].map((s) => (
-                <a
+                <Link
                   key={s.label}
                   href={s.href}
-                  target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Follow us on ${s.label}`}
                   className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-700 bg-slate-800/60 text-slate-400 hover:border-amber-400/50 hover:bg-amber-400/10 hover:text-amber-300 transition-all duration-150"
                 >
                   {s.icon}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -202,7 +192,7 @@ export default  function Footer() {
             {[
               { label: "Privacy Policy", href: "/privacy-policy" },
               { label: "Terms of Use", href: "/terms" },
-              { label: "Sitemap", href: "/sitemap.xml" },
+              { label: "Sitemap", href: "/sitemap.ts" },
             ].map((l) => (
               <Link
                 key={l.href}

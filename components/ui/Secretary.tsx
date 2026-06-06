@@ -1,4 +1,3 @@
-"use server"
 export default async function Secretary() {
     return (
         <section aria-labelledby="founder-heading" className="relative overflow-hidden bg-[#f5f3ee] py-20 px-6">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Mail, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 // ─── brand SVG icons ──────────────────────────────────────────────────────────
 
@@ -66,11 +66,6 @@ export default function TopBar() {
     return (
         <div className="w-full bg-[#0a1628] text-white">
 
-            {/* ════════════════════════════════════
-          MOBILE  (< sm = < 640px)
-          Row 1 : key links  +  social icons
-          Row 2 : auto-scrolling ticker
-      ════════════════════════════════════ */}
             <div className="sm:hidden">
 
                 {/* row 1 */}

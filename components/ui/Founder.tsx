@@ -1,18 +1,3 @@
-// "use server"
-// export default function Founder() {
-//     return (
-//         <div>
-//             <h1>Founder</h1>
-//             <img src="/images/ragendra-swarup" alt="" />
-//             <h1>SHRI RAGENDRA SWARUP</h1>
-//             <h4>April 22, 1956 - May 19, 2002</h4>
-//             <p>Shri Ragendra Swarup was an eminent and towering figure in the educational sphere who dedicated his life to the noble cause of spreading quality education by eastablishing premiere university and pre-university level educational institutions through out the state of Uttar Pradesh under the banner of Dr. Virendra Swarup Memorial Trust.</p>
-//             <p>Being a philanthropist, his genuine concern and magnanimity towards the masses made him dear to all th hearts.His name and commendable deeds shall be cherished in high spirits by one and all.</p>
-//             <h1>VSGOI shall always endeavor to make his dreams come true.</h1>
-//         </div>
-//     )
-// };
-
 export default function Founder() {
   return (
     <section aria-labelledby="founder-heading" className="relative overflow-hidden bg-[#f5f3ee] py-20 px-6">

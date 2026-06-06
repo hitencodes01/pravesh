@@ -1,39 +1,20 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
-import { submitAdmissionForm, type AdmissionFormState } from "../actions/admission.action";
-import { cn } from "@/lib/utils";
-import { CheckCircle, AlertCircle, Loader2, GraduationCap } from "lucide-react";
-
+import { useState, useRef } from "react";
+import { cn } from "../../lib/utils";
+import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/ui/Navbar";
 
-// ─── initial state ────────────────────────────────────────────────────────────
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbxYYLViLKXMJfvhjVWs7KLRTAne7Z3UBYPndzveEd6FyZY0vrLFeSG34iSTThVk4kW5/exec";
 
-const INITIAL_STATE: AdmissionFormState = {
-    success: false,
-    message: "",
-    errors: {},
-};
-
-// ─── small helpers ────────────────────────────────────────────────────────────
-
-function Field({
-    label,
-    required,
-    error,
-    children,
-}: {
-    label: string;
-    required?: boolean;
-    error?: string;
-    children: React.ReactNode;
+function Field({ label, required, error, children }: {
+    label: string; required?: boolean; error?: string; children: React.ReactNode;
 }) {
     return (
         <div className="flex flex-col gap-1">
             <label className="text-[13px] font-medium text-slate-700">
-                {label}
-                {required && <span className="ml-0.5 text-red-500">*</span>}
+                {label}{required && <span className="ml-0.5 text-red-500">*</span>}
             </label>
             {children}
             {error && (
@@ -73,181 +54,147 @@ function Select({ className, ...props }: React.SelectHTMLAttributes<HTMLSelectEl
     );
 }
 
-// ─── page ─────────────────────────────────────────────────────────────────────
-
 export default function AdmissionPage() {
-    const [state, action, isPending] = useActionState(submitAdmissionForm, INITIAL_STATE);
+    const [isPending, setIsPending] = useState(false);
+    const [status, setStatus] = useState<{ success: boolean; message: string } | null>(null);
+    const [errors, setErrors] = useState<Record<string, string>>({});
     const formRef = useRef<HTMLFormElement>(null);
-    const router = useRouter()
+    const router = useRouter();
 
-    // reset form on success
-    useEffect(() => {
-        if (state.success) {
-            formRef.current?.reset()
-            router.push("/")
-        };
-    }, [state.success]);
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        const fd = new FormData(e.currentTarget);
 
-    const e = state.errors ?? {};
+        const fullName = fd.get("fullName")?.toString().trim() ?? "";
+        const contact = fd.get("contact")?.toString().trim() ?? "";
+        const email = fd.get("email")?.toString().trim() ?? "";
+        const board = fd.get("board")?.toString() ?? "";
+        const interestedCourse = fd.get("interestedCourse")?.toString() ?? "";
+
+        // ── validation ──
+        const errs: Record<string, string> = {};
+        if (!fullName) errs.fullName = "Full name is required.";
+        if (!/^\d{10}$/.test(contact)) errs.contact = "Enter a valid 10-digit number.";
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errs.email = "Enter a valid email.";
+        if (!board) errs.board = "Please select a board.";
+        if (!interestedCourse) errs.interestedCourse = "Please select a course.";
+
+        if (Object.keys(errs).length > 0) {
+            setErrors(errs);
+            return;
+        }
+
+        setErrors({});
+        setIsPending(true);
+
+        try {
+            const payload = {
+                fullName, contact, email, board, interestedCourse,
+                submittedAt: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+            };
+
+            await fetch(SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            setStatus({ success: true, message: "Enquiry submitted! Our counsellor will contact you soon." });
+            formRef.current?.reset();
+            setTimeout(() => router.push("/"), 2000);
+        } catch (err) {
+            console.error(err);
+            setStatus({ success: false, message: "Server error. Please try again later." });
+        } finally {
+            setIsPending(false);
+        }
+    }
 
     return (
-
         <div>
             <Navbar />
             <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#0f2044] to-[#1a3a6e] py-12 px-4">
                 <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-blue-500/10" />
                 <div className="pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-amber-400/10" />
-                <div className="mx-auto max-w-2xl">
 
-                    {/* ── heading ── */}
+                <div className="mx-auto max-w-xl">
+                    {/* heading */}
                     <div className="mb-8 text-center">
-                        <div className="mb-3 inline-flex h-10 w-24 items-center justify-center rounded-xl">
-                            <img src="/images/vsgoi.jpg" alt="" />
+                        <div className="mb-3 inline-flex h-16 w-16 items-center justify-center rounded-xl overflow-hidden">
+                            <img src="/images/vsgoi.jpg" alt="VSGOI Logo" className="h-full w-full object-cover" />
                         </div>
-                        <h1 className="text-2xl font-bold mb-2  uppercase tracking-widest text-amber-400 sm:text-3xl">
+                        <h1 className="text-2xl font-bold uppercase tracking-widest text-amber-400 sm:text-3xl">
                             Admission Enquiry
                         </h1>
-                        <p className="mt-1.5 text-sm bg-white rounded-2xl py-2 font-bold text-slate-500">
+                        <p className="mt-2 text-sm bg-white/10 backdrop-blur rounded-xl py-2 px-4 text-slate-300">
                             Fill the form below and our counsellor will reach out to you.
                         </p>
                     </div>
 
-                    {/* ── global success / error banner ── */}
-                    {state.message && (
+                    {/* banner */}
+                    {status && (
                         <div
                             className={cn(
                                 "mb-6 flex items-start gap-3 rounded-xl border px-4 py-3 text-sm",
-                                state.success
+                                status.success
                                     ? "border-green-200 bg-green-50 text-green-800"
                                     : "border-red-200 bg-red-50 text-red-700"
                             )}
                             role="alert"
                         >
-                            {state.success
-                                ? <CheckCircle size={18} className="mt-0.5 shrink-0 text-green-600" aria-hidden />
-                                : <AlertCircle size={18} className="mt-0.5 shrink-0 text-red-500" aria-hidden />
+                            {status.success
+                                ? <CheckCircle size={18} className="mt-0.5 shrink-0 text-green-600" />
+                                : <AlertCircle size={18} className="mt-0.5 shrink-0 text-red-500" />
                             }
-                            {state.message}
+                            {status.message}
                         </div>
                     )}
 
-                    {/* ── form card ── */}
+                    {/* form */}
                     <form
                         ref={formRef}
-                        action={action}
+                        onSubmit={handleSubmit}
                         noValidate
-                        className="rounded-2xl border-2  border-blue-500 bg-white px-6 py-8 shadow-sm sm:px-8 shadow-blue-500"
+                        className="rounded-2xl border-2 border-blue-500 bg-white px-6 py-8 shadow-lg shadow-blue-500/20 sm:px-8"
                     >
-                        {/* ── section: personal ── */}
-                        <p className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-slate-400">
-                            Personal Details
-                        </p>
-                        <div className="mb-6 grid gap-4 sm:grid-cols-2">
-                            <Field label="Full Name" required error={e.fullName}>
-                                <Input
-                                    name="fullName"
-                                    placeholder="e.g. Rahul Sharma"
-                                    autoComplete="name"
-                                    disabled={isPending}
-                                />
+                        <div className="grid gap-5">
+                            <Field label="Full Name" required error={errors.fullName}>
+                                <Input name="fullName" placeholder="e.g. Rahul Sharma" autoComplete="name" disabled={isPending} />
                             </Field>
 
-                            <Field label="Mobile Number" required error={e.contact}>
-                                <Input
-                                    name="contact"
-                                    type="tel"
-                                    placeholder="10-digit number"
-                                    maxLength={10}
-                                    autoComplete="tel"
-                                    disabled={isPending}
-                                />
-                            </Field>
+                            <div className="grid gap-4 sm:grid-cols-2">
+                                <Field label="Mobile Number" required error={errors.contact}>
+                                    <Input name="contact" type="tel" placeholder="10-digit number" maxLength={10} disabled={isPending} />
+                                </Field>
+                                <Field label="Email Address" error={errors.email}>
+                                    <Input name="email" type="email" placeholder="optional" autoComplete="email" disabled={isPending} />
+                                </Field>
+                            </div>
 
-                            <Field label="Email Address" error={e.email} >
-                                <Input
-                                    name="email"
-                                    type="email"
-                                    placeholder="optional"
-                                    autoComplete="email"
-                                    disabled={isPending}
-                                />
-                            </Field>
+                            <div className="grid gap-4 sm:grid-cols-2">
+                                <Field label="Board" required error={errors.board}>
+                                    <Select name="board" defaultValue="" disabled={isPending}>
+                                        <option value="" disabled>Select board</option>
+                                        <option value="CBSE">CBSE</option>
+                                        <option value="UP">UP Board</option>
+                                    </Select>
+                                </Field>
+                                <Field label="Interested Course" required error={errors.interestedCourse}>
+                                    <Select name="interestedCourse" defaultValue="" disabled={isPending}>
+                                        <option value="" disabled>Select course</option>
+                                        <option value="BTECH">B.Tech</option>
+                                        <option value="BCA">BCA</option>
+                                        <option value="BBA">BBA</option>
+                                        <option value="MBA">MBA</option>
+                                        <option value="POLYTECHNIC">Polytechnic</option>
+                                        <option value="ITI">ITI</option>
+                                    </Select>
+                                </Field>
+                            </div>
                         </div>
 
-                        {/* ── section: academic ── */}
-                        <p className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-slate-400">
-                            Academic Details
-                        </p>
-                        <div className="mb-6 grid gap-4 sm:grid-cols-2">
-                            <Field label="Board" required error={e.board}>
-                                <Select name="board" defaultValue="" disabled={isPending}>
-                                    <option value="" disabled>Select board</option>
-                                    <option value="CBSE">CBSE</option>
-                                    <option value="UP">UP Board</option>
-                                </Select>
-                            </Field>
+                        <div className="my-6 border-t border-slate-100" />
 
-                            <Field label="Interested Course" required error={e.interestedCourse}>
-                                <Select name="interestedCourse" defaultValue="" disabled={isPending}>
-                                    <option value="" disabled>Select course</option>
-                                    <option value="BTECH">B.Tech</option>
-                                    <option value="BCA">BCA</option>
-                                    <option value="BBA">BBA</option>
-                                    <option value="MBA">MBA</option>
-                                    <option value="POLYTECHNIC">Polytechnic</option>
-                                    <option value="ITI">ITI</option>
-                                </Select>
-                            </Field>
-
-                            <Field label="10th Percentage" error={e.percentage10}>
-                                <Input
-                                    name="percentage10"
-                                    type="number"
-                                    min="0"
-                                    max="100"
-                                    step="0.01"
-                                    placeholder="e.g. 75.5"
-                                    disabled={isPending}
-                                />
-                            </Field>
-
-                            <Field label="12th Percentage" error={e.percentage12}>
-                                <Input
-                                    name="percentage12"
-                                    type="number"
-                                    min="0"
-                                    max="100"
-                                    step="0.01"
-                                    placeholder="e.g. 68.0"
-                                    disabled={isPending}
-                                />
-                            </Field>
-                        </div>
-
-                        {/* ── section: entrance exam ── */}
-                        <p className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-slate-400">
-                            Entrance Exam  <span className="normal-case tracking-normal text-slate-400">(optional)</span>
-                        </p>
-                        <div className="mb-8 grid gap-4 sm:grid-cols-2">
-                            <Field label="Score Card Type" error={e.scoreCardType}>
-                                <Select name="scoreCardType" defaultValue="" disabled={isPending}>
-                                    <option value="">None</option>
-                                    <option value="JEE">JEE</option>
-                                    <option value="JEECUP">JEECUP</option>
-                                    <option value="CUET">CUET</option>
-                                </Select>
-                            </Field>
-
-                            <Field label="Score / Rank" error={e.scoreCardScore}>
-                                <Input
-                                    name="scoreCardScore"
-                                    placeholder="e.g. 85 or AIR 12000"
-                                    disabled={isPending}
-                                />
-                            </Field>
-                        </div>
-
-                        {/* ── submit ── */}
                         <button
                             type="submit"
                             disabled={isPending}
@@ -258,13 +205,8 @@ export default function AdmissionPage() {
                             )}
                         >
                             {isPending ? (
-                                <>
-                                    <Loader2 size={16} className="animate-spin" aria-hidden />
-                                    Submitting…
-                                </>
-                            ) : (
-                                "Submit Enquiry"
-                            )}
+                                <><Loader2 size={16} className="animate-spin" />Submitting…</>
+                            ) : "Submit Enquiry"}
                         </button>
 
                         <p className="mt-4 text-center text-[11px] text-slate-400">

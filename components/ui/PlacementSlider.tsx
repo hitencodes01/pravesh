@@ -12,11 +12,11 @@ export interface PlacementSlide {
 }
 
 const placements: PlacementSlide[] = [
-    { id: 1, image: "/images/placement/p1.jpg", alt: "placement" },
+    { id: 5, image: "/images/placement/p6.jpg", alt: "placement" },
+    { id: 1, image: "/images/placement/p7.jpg", alt: "placement" },
     { id: 2, image: "/images/placement/p2.jpg", alt: "placement" },
+    { id: 4, image: "/images/placement/p8.jpg", alt: "placement" },
     { id: 3, image: "/images/placement/p3.jpg", alt: "placement" },
-    { id: 4, image: "/images/placement/p4.jpg", alt: "placement" },
-    { id: 5, image: "/images/placement/p5.jpg", alt: "placement" },
 ];
 
 interface PlacementCarouselProps {
