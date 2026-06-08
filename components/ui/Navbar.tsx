@@ -185,7 +185,6 @@ const NAV_ITEMS: NavItem[] = [
         heading: "Happenings",
         children: [
           { label: "Events & Activities", href: "/events" },
-          { label: "Awards & Recognition", href: "/awards" },
           { label: "Clubs", href: "/clubs" },
           { label: "Media Coverage", href: "/media" },
         ],

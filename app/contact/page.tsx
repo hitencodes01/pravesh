@@ -1,8 +1,8 @@
+import Footer from '@/components/ui/Footer'
 import Navbar from '@/components/ui/Navbar'
 import { Globe, Mail, Phone, MapPin, Clock, ChevronRight, Send } from 'lucide-react'
 import Link from 'next/link'
 
-// ─── data ─────────────────────────────────────────────────────────────────────
 
 const contactCards = [
     {
@@ -35,7 +35,7 @@ const contactCards = [
     {
         icon: MapPin,
         label: "Address",
-        value: "Sitapur Road, Lucknow, UP",
+        value: "Ragendra Swarup Knowledge City, Kapur-Lucknow Highway, Unnao",
         href: "https://maps.google.com/?q=VSGOI+Lucknow",
         color: "bg-purple-50 text-purple-600",
         border: "border-purple-100",
@@ -43,7 +43,6 @@ const contactCards = [
     },
 ]
 
-// ─── page ─────────────────────────────────────────────────────────────────────
 
 export default function ContactPage() {
     return (
@@ -163,6 +162,7 @@ export default function ContactPage() {
                 </section>
 
             </main>
+            <Footer/>
         </>
     )
 }
