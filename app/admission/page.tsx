@@ -1,14 +1,12 @@
 "use client";
 
-// just to add in github
-
 import { useState, useRef } from "react";
 import { cn } from "../../lib/utils";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/ui/Navbar";
 
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbwIweKEQNAzgkjOj83yqM_hFlS1xt9VVTA7wVLJTSNlLKyp2qFhrNaLeptfE7OszLY1/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbyKaCRY-oz2YylTQMHZQwnhEf9_e1dhj5QZEytDYPitwNaesd5y9R0XKm0x1FilZ6t8zQ/exec";
 
 function Field({ label, required, error, children }: {
     label: string; required?: boolean; error?: string; children: React.ReactNode;
@@ -94,8 +92,7 @@ export default function AdmissionPage() {
                 fullName, contact, email, board, interestedCourse,
                 submittedAt: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
             };
-
-            await fetch(SHEET_URL, {
+            const res = await fetch(SHEET_URL, {
                 method: "POST",
                 mode: "no-cors",
                 headers: { "Content-Type": "application/json" },
