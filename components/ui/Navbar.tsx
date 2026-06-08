@@ -178,12 +178,7 @@ const NAV_ITEMS: NavItem[] = [
       {
         heading: "Facilities",
         children: [
-          { label: "Central Library", href: "/library" },
-          { label: "Hostel", href: "/hostel" },
-          { label: "Health & Wellness", href: "/health" },
-          { label: "Gymnasium", href: "/gym" },
-          { label: "Cafeteria", href: "/cafeteria" },
-          { label: "Computer Lab", href: "/computer-lab" },
+          { label: "Infrastructure", href: "/facilities" },
         ],
       },
       {
@@ -191,9 +186,8 @@ const NAV_ITEMS: NavItem[] = [
         children: [
           { label: "Events & Activities", href: "/events" },
           { label: "Awards & Recognition", href: "/awards" },
+          { label: "Clubs", href: "/clubs" },
           { label: "Media Coverage", href: "/media" },
-          { label: "Newsletters", href: "/newsletters" },
-          { label: "Alumni Registration", href: "/alumni" },
         ],
       },
     ],
@@ -518,7 +512,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="block w-full rounded-md bg-blue-700 py-2.5 text-center text-[14px] font-semibold text-white transition-colors hover:bg-blue-800"
           >
-            Apply Now
+            Enquire Now
           </Link>
         </div>
       </div>

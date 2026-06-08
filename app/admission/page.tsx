@@ -6,7 +6,7 @@ import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/ui/Navbar";
 
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbxYYLViLKXMJfvhjVWs7KLRTAne7Z3UBYPndzveEd6FyZY0vrLFeSG34iSTThVk4kW5/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbwIweKEQNAzgkjOj83yqM_hFlS1xt9VVTA7wVLJTSNlLKyp2qFhrNaLeptfE7OszLY1/exec";
 
 function Field({ label, required, error, children }: {
     label: string; required?: boolean; error?: string; children: React.ReactNode;

@@ -61,9 +61,9 @@ export default function CourseSection() {
         {
             key: "BTECH",
             name: "B.TECH",
-            tags: ["CS", "ME", "CSE", "EE"],
+            tags: ["CE", "ME", "CSE", "EE"],
             description:
-                "The B.Tech program at VSGOI prepares engineers for a rapidly evolving technological landscape. Offered across four specializations — Computer Science (CS), Mechanical Engineering (ME), Computer Science & Engineering (CSE), and Electrical Engineering (EE) — the program blends rigorous theoretical foundations with hands-on practical training. Students engage in laboratory work, industrial visits, live projects, and internships that bridge the gap between academia and industry.",
+                "The B.Tech program at VSGOI prepares engineers for a rapidly evolving technological landscape. Offered across four specializations — Civil Engineering (CE), Mechanical Engineering (ME), Computer Science & Engineering (CSE), and Electrical Engineering (EE) — the program blends rigorous theoretical foundations with hands-on practical training. Students engage in laboratory work, industrial visits, live projects, and internships that bridge the gap between academia and industry.",
         },
         {
             key: "BBA",
