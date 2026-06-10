@@ -127,7 +127,7 @@ function FeaturedCard({ blog }: { blog: (typeof blogs)[0] }) {
         {/* Image */}
         <div className="relative h-72 w-full shrink-0 overflow-hidden lg:h-auto lg:w-1/2">
           <Image
-            src={blog.image}
+            src={`/pravesh/${blog.image}`}
             alt={blog.headline}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -162,7 +162,7 @@ function FeaturedCard({ blog }: { blog: (typeof blogs)[0] }) {
             <div className="flex items-center gap-3">
               <div className="relative h-8 w-8 overflow-hidden rounded-full bg-white/10">
                 <Image
-                  src={blog.authorImage}
+                  src={`/pravesh/${blog.authorImage}`}
                   alt={blog.author}
                   fill
                   className="object-cover"
@@ -188,7 +188,7 @@ function BlogCard({ blog }: { blog: (typeof blogs)[0] }) {
       {/* Image */}
       <div className="relative h-52 w-full overflow-hidden">
         <Image
-          src={blog.image}
+          src={`/pravesh/${blog.image}`}
           alt={blog.headline}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -225,7 +225,7 @@ function BlogCard({ blog }: { blog: (typeof blogs)[0] }) {
           <div className="flex items-center gap-2">
             <div className="relative h-7 w-7 overflow-hidden rounded-full bg-white/10">
               <Image
-                src={blog.authorImage}
+                src={`/pravesh/${blog.authorImage}`}
                 alt={blog.author}
                 fill
                 className="object-cover"

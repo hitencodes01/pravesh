@@ -140,7 +140,7 @@ export default function FacilitiesPage() {
                 {/* Image */}
                 <div className="md:w-1/3 h-56 md:h-auto flex-shrink-0">
                   <img
-                    src={f.image}
+                    src={`/pravesh${f.image}`}
                     alt={f.title}
                     className="h-full w-full object-cover"
                   />
@@ -179,7 +179,7 @@ export default function FacilitiesPage() {
               {/* Campus image */}
               <div className="relative h-64 w-full md:h-auto md:w-2/5 md:min-h-[260px]">
                 <Image
-                  src="/images/building.jpeg"
+                  src="/pravesh/images/building.jpeg"
                   alt="Lush green VSGOI campus"
                   fill
                   className="object-contain"

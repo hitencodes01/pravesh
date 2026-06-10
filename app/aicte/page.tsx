@@ -7,7 +7,7 @@ export default function AICTE() {
     <div>
         <Navbar/>
         <div className="flex justify-center items-center py-5">
-            <img src="/images/aicte.png"  alt="" />
+            <img src="/pravesh/images/aicte.png"  alt="" />
         </div>
         <Footer/>
     </div>

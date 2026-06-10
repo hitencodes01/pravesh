@@ -140,7 +140,7 @@ export default function ClubsPage() {
                     {/* Cover */}
                     <div className="relative h-72 w-full overflow-hidden rounded-2xl">
                       <Image
-                        src={club.coverImage}
+                        src={`/pravesh/${club.coverImage}`}
                         alt={club.name}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-105"

@@ -89,7 +89,7 @@ export default function EventsPage() {
           {/* Background image */}
           <div className="absolute inset-0">
             <Image
-              src="/events/alakriti-hero.jpg"
+              src="/pravesh/events/alakriti-hero.jpg"
               alt="Alakriti 2026"
               fill
               className="object-cover"
@@ -206,7 +206,7 @@ export default function EventsPage() {
               <div className="relative w-full shrink-0 lg:w-2/5">
                 <div className="relative h-[420px] w-full overflow-hidden rounded-2xl border border-yellow-400/20">
                   <Image
-                    src="/images/md-danish.jpeg"
+                    src="/pravesh/images/md-danish.jpeg"
                     alt="Md Danish performing at Alakriti Music Night"
                     fill
                     className="object-cover"
@@ -288,7 +288,7 @@ export default function EventsPage() {
                   }`}
               >
                 <Image
-                  src={img}
+                  src={`/pravesh/${img}`}
                   alt={`Alakriti 2026 gallery ${i + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-110"
@@ -325,7 +325,7 @@ export default function EventsPage() {
                 <div className="flex flex-col gap-3 lg:w-1/2">
                   <div className="relative h-72 w-full overflow-hidden rounded-2xl">
                     <Image
-                      src={ev.coverImage}
+                      src={`/pravesh/${ev.coverImage}`}
                       alt={ev.name}
                       fill
                       className="object-cover transition-transform duration-500 hover:scale-105"
@@ -354,7 +354,7 @@ export default function EventsPage() {
                         className="relative h-24 overflow-hidden rounded-xl"
                       >
                         <Image
-                          src={img}
+                          src={`/pravesh/${img}`}
                           alt={`${ev.name} moment ${i + 1}`}
                           fill
                           className="object-cover transition-transform duration-300 hover:scale-110"

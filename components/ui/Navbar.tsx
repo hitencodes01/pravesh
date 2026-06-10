@@ -406,7 +406,7 @@ export default function Navbar() {
           {/* ── logo ── */}
           <Link href="/" className="shrink-0" aria-label="VSGOI home">
             <Image
-              src="/images/vsgoi.jpg"
+              src="/pravesh/images/vsgoi.jpg"
               alt="VSGOI logo"
               width={160}
               height={52}
@@ -477,7 +477,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
           <Link href="/" onClick={() => setMobileOpen(false)}>
             <Image
-              src="/images/vsgoi.jpg"
+              src="/pravesh/images/vsgoi.jpg"
               alt="VSGOI logo"
               width={120}
               height={40}

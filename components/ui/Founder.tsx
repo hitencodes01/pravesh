@@ -35,7 +35,7 @@ export default function Founder() {
             <div className="relative z-10 mb-6">
               <div className="h-48 w-48 overflow-hidden rounded-full border-4 border-amber-400/40 bg-[#1e3a5f] shadow-lg ring-4 ring-[#1a2744]">
                 <img
-                  src="/images/ragendra-swarup.jpg"
+                  src="/pravesh/images/ragendra-swarup.jpg"
                   alt="Portrait of Shri Ragendra Swarup, Founder"
                   className="h-full w-full object-cover object-top"
                   loading="lazy"

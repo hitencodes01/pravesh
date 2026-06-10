@@ -71,7 +71,7 @@ export default function PlacementMarquee() {
                         >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src={company.logo}
+                                src={`/pravesh/${company.logo}`}
                                 alt={company.name}
                                 className="max-h-10 w-auto object-contain grayscale transition-all duration-300 hover:grayscale-0"
                                 onError={(e) => {

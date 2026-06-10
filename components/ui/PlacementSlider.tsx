@@ -80,7 +80,7 @@ export default function PlacementCarousel({
                             )}
                         >
                             <Image
-                                src={placement.image}
+                                src={`/pravesh/${placement.image}`}
                                 alt={placement.alt}
                                 fill
                                 priority={i === 0}

@@ -24,7 +24,7 @@ interface HeroSliderProps {
 const DEFAULT_SLIDES: Slide[] = [
     {
         id: 2,
-        src: "/images/Pravesh.png",
+        src: "/pravesh/images/Pravesh.png",
         alt: "Students in computer lab",
         headline: "Admissions Open 2026–27",
         subline: "B.Tech · MBA · BCA · BBA · ITI · POLYTECHNIC",
@@ -32,7 +32,7 @@ const DEFAULT_SLIDES: Slide[] = [
     },
     {
         id: 1,
-        src: "/images/building.jpeg",
+        src: "/pravesh/images/building.jpeg",
         alt: "VSGOI campus — aerial view",
         headline: "Shaping Tomorrow's Engineers",
         subline: "15+ years of academic excellence in technical education",
@@ -40,7 +40,7 @@ const DEFAULT_SLIDES: Slide[] = [
     },
     {
         id: 3,
-        src: "/images/placement/placement1.jpeg",
+        src: "/pravesh/images/placement/placement1.jpeg",
         alt: "Placement drive at VSGOI",
         headline: "150+ Placement Partners",
         subline: "Top recruiters from IT, core, and emerging tech sectors",
@@ -48,7 +48,7 @@ const DEFAULT_SLIDES: Slide[] = [
     },
     {
         id: 4,
-        src: "/images/B1.jpg",
+        src: "/pravesh/images/B1.jpg",
         alt: "VSGOI convocation ceremony",
         headline: "Celebrate, Innovate, Lead",
         subline: "A vibrant campus life built for holistic growth",
@@ -101,7 +101,7 @@ export default function HeroSlider({
                             )}
                         >
                             <Image
-                                src={s.src}
+                                src={`/pravesh/${s.src}`}
                                 alt={s.alt}
                                 fill
                                 sizes="(max-width: 768px) 100vw, 45vw"

@@ -35,7 +35,7 @@ export default function AicteCertificate() {
           className="relative mx-auto mb-8 max-w-[280px] transform transition-transform duration-300 group-hover:scale-105"
         >
           <Image 
-            src="/images/vsgoi.jpg" 
+            src="/pravesh/images/vsgoi.jpg" 
             alt="VSGOI Logo" 
             width={280} 
             height={90} 
@@ -68,7 +68,7 @@ export default function AicteCertificate() {
             className="relative h-40 w-40 cursor-pointer drop-shadow-[0_8px_16px_rgba(0,0,0,0.08)] group-hover:drop-shadow-[0_12px_24px_rgba(244,162,97,0.25)] transition-all duration-300"
           >
             <Image 
-              src="/images/AICTE.jpg" 
+              src="/pravesh/images/AICTE.jpg" 
               alt="AICTE Logo" 
               fill
               className="object-contain"

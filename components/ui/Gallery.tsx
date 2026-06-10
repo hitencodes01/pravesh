@@ -8,7 +8,7 @@ export default function Gallery({ images }: any) {
             {images.map((img: any) => (
                 <div key={img.id} className={styles.galleryItem}>
                     <Image
-                        src={img.src}
+                        src={`/pravesh/${img.src}`}
                         alt={img.alt}
                         width={img.width}
                         height={img.height}
