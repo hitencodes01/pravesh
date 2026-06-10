@@ -39,7 +39,7 @@ export default function Summer() {
                     {/* Image */}
                     <div style={{ position: "relative" }}>
                         <img
-                            src="/images/SummerCamp.jpeg"
+                            src="/pravesh/images/SummerCamp.webp"
                             alt="Summer Camp"
                             style={{
                                 width: "100%",

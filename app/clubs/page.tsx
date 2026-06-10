@@ -7,7 +7,7 @@ const clubs = [
     id: "sports",
     name: "Sports Club",
     tagline: "Sweat. Compete. Conquer.",
-    coverImage: "/clubs/sports.jpg",
+    coverImage: "/pravesh/images/clubs/Sports.webp",
     description:
       "The Sports Club fuels the athlete in every student. From inter-college tournaments to daily fitness sessions, we build champions on and off the field.",
     accent: "from-emerald-700 to-emerald-500",
@@ -20,13 +20,13 @@ const clubs = [
       { label: "Sports", value: "10+" },
       { label: "Trophies", value: "35+" },
     ],
-    gallery: ["/clubs/sports-1.jpg", "/clubs/sports-2.jpg", "/clubs/sports-3.jpg"],
+
   },
   {
     id: "cultural",
     name: "Cultural Club",
     tagline: "Celebrate. Express. Inspire.",
-    coverImage: "/clubs/cultural.jpg",
+    coverImage: "/pravesh/images/clubs/Cultural.jpg",
     description:
       "A stage for performers, artists, and dreamers. The Cultural Club organises festivals, dance events, drama performances, and art exhibitions that bring campus life alive.",
     accent: "from-violet-700 to-violet-500",
@@ -39,13 +39,12 @@ const clubs = [
       { label: "Events/Year", value: "15+" },
       { label: "Art Shows", value: "8+" },
     ],
-    gallery: ["/clubs/cultural-1.jpg", "/clubs/cultural-2.jpg", "/clubs/cultural-3.jpg"],
   },
   {
     id: "technical",
     name: "Technical Club",
     tagline: "Build. Innovate. Launch.",
-    coverImage: "/clubs/technical.jpg",
+    coverImage: "/pravesh/images/clubs/Technical.webp",
     description:
       "Where ideas become prototypes. The Technical Club empowers students through hackathons, coding contests, robotics workshops, and tech talks by industry experts.",
     accent: "from-blue-700 to-blue-500",
@@ -58,13 +57,12 @@ const clubs = [
       { label: "Projects", value: "50+" },
       { label: "Workshops", value: "20+" },
     ],
-    gallery: ["/clubs/technical-1.jpg", "/clubs/technical-2.jpg", "/clubs/technical-3.jpg"],
   },
   {
     id: "social",
     name: "Social Club",
     tagline: "Care. Connect. Change.",
-    coverImage: "/clubs/social.jpg",
+    coverImage: "/pravesh/images/clubs/Social.webp",
     description:
       "Driven by compassion, the Social Club leads community outreach, awareness drives, blood donation camps, and initiatives that create real impact beyond the campus walls.",
     accent: "from-amber-600 to-amber-400",
@@ -73,12 +71,13 @@ const clubs = [
     badgeBg: "bg-amber-500",
     activities: ["Blood Donation", "Tree Plantation", "Awareness Drives", "NSS", "Volunteering"],
     highlights: [
-      { label: "Members", 
-        value: "140+" },
+      {
+        label: "Members",
+        value: "140+"
+      },
       { label: "Campaigns", value: "25+" },
       { label: "Lives Touched", value: "1000+" },
     ],
-    gallery: ["/clubs/social-1.jpg", "/clubs/social-2.jpg", "/clubs/social-3.jpg"],
   },
 ];
 
@@ -211,31 +210,6 @@ export default function ClubsPage() {
             );
           })}
         </div>
-
-        {/* ── Join CTA Banner ── */}
-        <section className="mx-4 mb-20 overflow-hidden rounded-2xl bg-gray-900 px-8 py-16 text-center md:mx-auto md:max-w-6xl">
-          <p className="mb-2 text-xs uppercase tracking-[4px] text-gray-400">
-            Get Involved
-          </p>
-          <h2 className="mb-4 font-serif text-4xl font-bold text-white">
-            Find Your Club. Find Your People.
-          </h2>
-          <p className="mx-auto mb-8 max-w-lg text-sm leading-relaxed text-gray-400">
-            Every VSGOI student is encouraged to be part of at least one club.
-            Grow your skills, build friendships, and leave a legacy.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {clubs.map((c) => (
-              <a
-                key={c.id}
-                href={`#${c.id}`}
-                className={`rounded-full border px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10 ${c.border}`}
-              >
-                {c.name}
-              </a>
-            ))}
-          </div>
-        </section>
 
         {/* ── Footer ── */}
         <footer className="border-t border-gray-200 bg-white py-6 text-center text-xs text-gray-400">

@@ -70,7 +70,7 @@ export default async function Secretary() {
                                 <path d="M0 28V16C0 7.163 5.373 1.6 16.12 0l1.88 3.2C12.373 4.533 9.333 7.52 8.8 12H16V28H0zm24 0V16C24 7.163 29.373 1.6 40.12 0L42 3.2C36.373 4.533 33.333 7.52 32.8 12H40V28H24z" fill="currentColor" />
                             </svg>
                             <p className="font-serif text-lg font-medium italic leading-relaxed text-[#1a2744] sm:text-xl">
-                                I will appreciate your decision to become part of our ongoing mission tp transform passions into careers.
+                                I will appreciate your decision to become part of our ongoing mission to transform passions into careers.
                             </p>
                         </div>
 
