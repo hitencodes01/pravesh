@@ -10,7 +10,7 @@ import Footer from "@/components/ui/Footer";
 import Secretary from "@/components/ui/Secretary";
 import PlacementCarousel from "@/components/ui/PlacementSlider";
 import AdmissionProcess from "@/components/ui/AdmissionProcess";
-import Summer from "@/components/ui/Summer";
+import Summer from "@/components/ui/PopUP";
 
 export default function Home() {
   return (

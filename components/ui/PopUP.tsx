@@ -39,7 +39,7 @@ export default function Summer() {
                     {/* Image */}
                     <div style={{ position: "relative" }}>
                         <img
-                            src="/pravesh/images/SummerCamp.webp"
+                            src="/pravesh/images/Pop.png"
                             alt="Summer Camp"
                             style={{
                                 width: "100%",
@@ -143,7 +143,7 @@ export default function Summer() {
                                         ; (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 4px 14px rgba(249,115,22,0.4)"
                                 }}
                             >
-                                <Link href={"https://forms.gle/i1KmzmZPmNMBxfXU8"}>Apply Now</Link>
+                                <Link href={"/admission"}>Apply Now</Link>
                             </button>
                         </div>
                     </div>
