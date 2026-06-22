@@ -7,7 +7,7 @@ const clubs = [
     id: "sports",
     name: "Sports Club",
     tagline: "Sweat. Compete. Conquer.",
-    coverImage: "/pravesh/images/clubs/Sports.webp",
+    coverImage: "/pravesh/images/club/Sports.webp",
     description:
       "The Sports Club fuels the athlete in every student. From inter-college tournaments to daily fitness sessions, we build champions on and off the field.",
     accent: "from-emerald-700 to-emerald-500",
@@ -26,7 +26,7 @@ const clubs = [
     id: "cultural",
     name: "Cultural Club",
     tagline: "Celebrate. Express. Inspire.",
-    coverImage: "/pravesh/images/clubs/Cultural.jpg",
+    coverImage: "/pravesh/images/club/Cultural.jpg",
     description:
       "A stage for performers, artists, and dreamers. The Cultural Club organises festivals, dance events, drama performances, and art exhibitions that bring campus life alive.",
     accent: "from-violet-700 to-violet-500",
@@ -44,7 +44,7 @@ const clubs = [
     id: "technical",
     name: "Technical Club",
     tagline: "Build. Innovate. Launch.",
-    coverImage: "/pravesh/images/clubs/Technical.webp",
+    coverImage: "/pravesh/images/club/Technical.webp",
     description:
       "Where ideas become prototypes. The Technical Club empowers students through hackathons, coding contests, robotics workshops, and tech talks by industry experts.",
     accent: "from-blue-700 to-blue-500",
@@ -62,7 +62,7 @@ const clubs = [
     id: "social",
     name: "Social Club",
     tagline: "Care. Connect. Change.",
-    coverImage: "/pravesh/images/clubs/Social.webp",
+    coverImage: "/pravesh/images/club/Social.webp",
     description:
       "Driven by compassion, the Social Club leads community outreach, awareness drives, blood donation camps, and initiatives that create real impact beyond the campus walls.",
     accent: "from-amber-600 to-amber-400",
